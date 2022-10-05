@@ -1,0 +1,9 @@
+.box-wrapper {
+  -webkit-transition-duration: 600ms;
+  transition-duration: 600ms;
+}
+
+.box-wrapper.loading {
+  transform: translate(110%, -1000px);
+  -webkit-transform: translate(110%, -1000px);
+}
