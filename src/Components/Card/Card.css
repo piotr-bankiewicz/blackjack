@@ -7,3 +7,60 @@
   transform: translate(110%, -1000px);
   -webkit-transform: translate(110%, -1000px);
 }
+
+.card {
+  width: 226px;
+  height: 314px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 226px;
+  height: 314px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card__face--front {
+}
+
+.card__face--back {
+  transform: rotateY(180deg);
+}
+
+.card-animation {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  animation: card-animation-keyframes 0.5s;
+  animation-timing-function: ease-out;
+}
+
+.is-flipped.card-animation {
+  animation: card-animation-keyframes-from-flipped 0.1s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes card-animation-keyframes {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes card-animation-keyframes-from-flipped {
+  from {
+    transform: rotateY(180deg);
+  }
+  to {
+    transform: rotateY(900deg);
+  }
+}

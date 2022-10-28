@@ -4,11 +4,13 @@ export interface Images {
 }
 
 export interface CardModel {
+  id?: string;
   code?: string;
   image?: string;
   images?: Images;
   value?: string;
   suit?: string;
+  flip?: boolean;
 }
 
 export interface DrawCard {

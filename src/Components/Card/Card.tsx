@@ -7,14 +7,16 @@ const Card = (props: CardModel) => {
 
   useEffect(() => {
     setTimeout(function () {
-      setCardClassName("box-wrapper");
+      setCardClassName("card box-wrapper");
+      if (props.flip) setCardClassName("card box-wrapper is-flipped");
       console.log(props?.code + " fired");
     }, 1000);
   });
   console.log(props?.code);
   return (
     <div className={cardClassName}>
-      <img src={props?.images?.png} alt={props.code} width="226" height="314"></img>
+      <img className="card__face card__face--front" src={props?.images?.png} alt={props.code} />
+      <img className="card__face card__face--back" src={process.env.PUBLIC_URL + "/cardback.png"} alt={props.code} />
     </div>
   );
 };
