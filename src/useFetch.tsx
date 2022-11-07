@@ -9,7 +9,7 @@ const useFetch = <T,>() => {
   const performRequest = (url: string) => {
     setLoading(true);
     axios
-      .get(url)
+      .get(url, { headers: { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept" } })
       .then((response) => {
         setData(response.data);
       })
